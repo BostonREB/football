@@ -5,9 +5,6 @@ class PlayerRetriever
   def get_players
     players = FFNerd.players
     players.map do |player|
-      if player_inactive?(player)
-        next
-      end
       Player.create(player_params(player))
     end
   end
@@ -21,11 +18,8 @@ class PlayerRetriever
       last_name: player.lname,
       fullname: player.display_name,
       team: player.team,
-      position: player.position
+      position: player.position,
+      active: player.active
     }
-  end
-
-  def player_inactive?(player)
-    player.active = 0
   end
 end
