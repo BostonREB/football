@@ -1,0 +1,116 @@
+<h1>NFL PLAYERS</h1>
+
+
+<div>
+  <h2><%= link_to "QUARTERBACKS", quarterbacks_path %></h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>NFL Team</th>
+    </tr>
+    <% @players.each do |player| %>
+      <% if player.position == "QB" %>
+        <tr>
+          <td><%= link_to player.fullname, player_path(player) %></td>
+          <td><%= player.position %></td>
+          <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+<div>
+  <h2><%= link_to "RUNNING BACKS", runningbacks_path %></h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>NFL Team</th>
+    </tr>
+    <% @players.each do |player| %>
+      <% if player.position == "RB" %>
+        <tr>
+          <td><%= link_to player.fullname, player_path(player) %></td>
+          <td><%= player.position %></td>
+          <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+<div>
+  <h2><%= link_to "WIDE RECEIVERS", widereceivers_path %></h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>NFL Team</th>
+    </tr>
+    <% @players.each do |player| %>
+      <% if player.position == "WR" %>
+        <tr>
+          <td><%= link_to player.fullname, player_path(player) %></td>
+          <td><%= player.position %></td>
+          <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+<div>
+  <h2><%= link_to "TIGHTENDS", tightends_path %></h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>NFL Team</th>
+    </tr>
+    <% @players.each do |player| %>
+      <% if player.position == "TE" %>
+        <tr>
+          <td><%= link_to player.fullname, player_path(player) %></td>
+          <td><%= player.position %></td>
+          <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+<div>
+  <h2><%= link_to "KICKERS", kickers_path %></h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>NFL Team</th>
+    </tr>
+    <% @players.each do |player| %>
+      <% if player.position == "K" %>
+        <tr>
+          <td><%= link_to player.fullname, player_path(player) %></td>
+          <td><%= player.position %></td>
+          <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+<div>
+  <h2>DEFENSE/SPECIAL TEAMS</H2>
+  <table>
+    <tr>
+      <th>NFL Team</th>
+    </tr>
+    <% @pro_teams.each do |team| %>
+      <tr>
+        <td><%= link_to team.full_name, pro_team_path(team) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

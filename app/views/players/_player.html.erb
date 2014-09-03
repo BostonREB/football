@@ -1,6 +1,6 @@
-<%= div_for player do %>
-  <% if player.active?(player) %>
-    <%= link_to player.fullname, player_path(player) %>
-    <%= player.position %>
-  <% end %>
-<% end %>
+<tr>
+  <td><%= link_to player.fullname, player_path(player) %></td>
+  <td><%= player.position %></td>
+  <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
+</tr>
+

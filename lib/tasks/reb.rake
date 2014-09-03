@@ -22,5 +22,15 @@ namespace :get_data do
       player.save
     end
   end
+
+  desc "Delete free agents and inactive players"
+  task remove_inactives: :environment do
+    players = Player.all
+    players.each do |player|
+      if player.active == 0 || player.team == "FA"
+        player.destroy
+      end
+    end
+  end
 end
 
