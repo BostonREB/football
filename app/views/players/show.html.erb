@@ -1,11 +1,13 @@
 <div>
-<%= @player.fullname %>
+  <%= @player.fullname %>
 </div>
+
 <div>
   NFL Team:
-<%= link_to @player.pro_team.full_name, pro_team_path(@player.pro_team) %>
+  <%= link_to @player.pro_team.full_name, pro_team_path(@player.pro_team) %>
 </div>
+
 <div>
   Position:
-<%= @player.position %>
+  <%= @player.position %>
 </div>

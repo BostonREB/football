@@ -1,10 +1,10 @@
 <h1><%= @pro_team.full_name %></h1>
 
-<h4>
-  <% @team_players.each do |player| %>
+<% @positions.each do |players| %>
+    <h3><%= players.first.position %></h3>
+    <% players.each do |player| %>
       <div>
         <%= link_to player.fullname, player_path(player) %>
-        <%= player.position %>
       </div>
+    <% end %>
   <% end %>
-</h4>

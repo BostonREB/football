@@ -39,9 +39,9 @@ namespace :get_data do
     teams = ProTeam.all
     teams.each do |team|
       if nfc.include?(team.id)
-        team.conference = "National Football Conference"
+        team.conference = "NFC"
       else
-        team.conference = "American Football Conference"
+        team.conference = "AFC"
       end
       team.save
     end
@@ -49,20 +49,32 @@ namespace :get_data do
 
   desc "Add divisions to pro teams"
   task add_divisions: :environment do
-    east = [4, 9, 17, 19, 20, 21, 24, 32]
-    north = [3, 6, 7, 8, 11, 12, 18, 25]
-    south = [2, 5, 13, 14, 15, 22, 30, 31]
-    west = [1, 10, 16, 23, 26, 27, 28, 29]
+    n_east = [9, 19, 24, 32]
+    n_north = [6, 11, 12, 18]
+    n_south = [2, 5, 15, 30]
+    n_west = [1, 27, 28, 29]
+    a_east = [4, 17, 20, 21]
+    a_north = [3, 7, 8, 25]
+    a_south = [13, 14, 22, 31]
+    a_west = [10, 16, 23, 26]
     teams = ProTeam.all
     teams.each do |team|
-      if east.include?(team.id)
-        team.division = "East"
-      elsif north.include?(team.id)
-        team.division = "North"
-      elsif south.include?(team.id)
-        team.division = "South"
-      elsif west.include?(team.id)
-        team.division = "West"
+      if n_east.include?(team.id)
+        team.division = "NFC East"
+      elsif n_north.include?(team.id)
+        team.division = "NFC North"
+      elsif n_south.include?(team.id)
+        team.division = "NFC South"
+      elsif n_west.include?(team.id)
+        team.division = "NFC West"
+      elsif a_east.include?(team.id)
+        team.division = "AFC East"
+      elsif a_north.include?(team.id)
+        team.division = "AFC North"
+      elsif a_south.include?(team.id)
+        team.division = "AFC South"
+      elsif a_west.include?(team.id)
+        team.division = "AFC West"
       end
       team.save
     end

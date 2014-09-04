@@ -1,3 +1,6 @@
-</h2> National Football League Teams </h2>
+<h2> National Football League </h2>
 
-<%= render @pro_teams %>
+  <% @divisions.each do |teams| %>
+    <h3><%= teams.first.division %></h3>
+    <%= render teams %><br>
+  <% end %>
