@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902194442) do
+ActiveRecord::Schema.define(version: 20140904195739) do
 
   create_table "players", force: true do |t|
     t.string   "first_name"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20140902194442) do
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "conference"
+    t.string   "division"
   end
 
 end
