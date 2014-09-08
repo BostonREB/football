@@ -1,0 +1,8 @@
+<h4><%= current_user.username %> create new fantasy team </h4>
+
+<div>
+  <%= form_for @team do |form| %>
+    <%= form.text_field :name, placeholder: "Team Name" %>
+    <%= form.submit "Add Team" %>
+  <% end %>
+</div>

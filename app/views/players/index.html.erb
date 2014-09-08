@@ -11,11 +11,7 @@
     </tr>
     <% @players.each do |player| %>
       <% if player.position == "QB" %>
-        <tr>
-          <td><%= link_to player.fullname, player_path(player) %></td>
-          <td><%= player.position %></td>
-          <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
-        </tr>
+        <%= render player %>
       <% end %>
     <% end %>
   </table>
@@ -31,11 +27,7 @@
     </tr>
     <% @players.each do |player| %>
       <% if player.position == "RB" %>
-        <tr>
-          <td><%= link_to player.fullname, player_path(player) %></td>
-          <td><%= player.position %></td>
-          <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
-        </tr>
+        <%= render player %>
       <% end %>
     <% end %>
   </table>
@@ -51,11 +43,7 @@
     </tr>
     <% @players.each do |player| %>
       <% if player.position == "WR" %>
-        <tr>
-          <td><%= link_to player.fullname, player_path(player) %></td>
-          <td><%= player.position %></td>
-          <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
-        </tr>
+        <%= render player %>
       <% end %>
     <% end %>
   </table>
@@ -71,11 +59,7 @@
     </tr>
     <% @players.each do |player| %>
       <% if player.position == "TE" %>
-        <tr>
-          <td><%= link_to player.fullname, player_path(player) %></td>
-          <td><%= player.position %></td>
-          <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
-        </tr>
+        <%= render player %>
       <% end %>
     <% end %>
   </table>
@@ -91,18 +75,14 @@
     </tr>
     <% @players.each do |player| %>
       <% if player.position == "K" %>
-        <tr>
-          <td><%= link_to player.fullname, player_path(player) %></td>
-          <td><%= player.position %></td>
-          <td><%= link_to player.pro_team.full_name, pro_team_path(player.team) %></td>
-        </tr>
+        <%= render player %>
       <% end %>
     <% end %>
   </table>
 </div>
 
 <div>
-  <h2>DEFENSE/SPECIAL TEAMS</H2>
+  <h2><%= link_to "DEFENSE/SPECIAL TEAMS", defenses_path %></H2>
   <table>
     <tr>
       <th>NFL Team</th>

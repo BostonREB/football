@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'fantasy_football_nerd'
+gem 'monban'
+gem 'monban-generators'
 
 
 group :doc do

@@ -11,3 +11,10 @@
   Position:
   <%= @player.position %>
 </div>
+
+<div>
+  <% if signed_in? %>
+  <div id="pick_player_button">
+    <%= render "pick_player_button", player: @player %>
+  </div>
+<% end %>

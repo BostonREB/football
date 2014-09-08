@@ -1,0 +1,9 @@
+<h1>Defenses</h1>
+
+<div>
+  <% @players.each do |player| %>
+    <div>
+      <td><%= link_to player.fullname, player_path(player) %><td>
+    </div>
+  <% end %>
+</div>

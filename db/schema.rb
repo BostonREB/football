@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904195739) do
+ActiveRecord::Schema.define(version: 20140908165442) do
 
   create_table "players", force: true do |t|
     t.string   "first_name"
@@ -36,5 +36,33 @@ ActiveRecord::Schema.define(version: 20140904195739) do
     t.string   "conference"
     t.string   "division"
   end
+
+  create_table "team_player_relationships", force: true do |t|
+    t.integer  "selecting_team_id"
+    t.integer  "selected_player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "team_player_relationships", ["selected_player_id"], name: "index_team_player_relationships_on_selected_player_id"
+  add_index "team_player_relationships", ["selecting_team_id"], name: "index_team_player_relationships_on_selecting_team_id"
+
+  create_table "teams", force: true do |t|
+    t.string  "name"
+    t.integer "user_id"
+  end
+
+  add_index "teams", ["user_id"], name: "index_teams_on_user_id"
+
+  create_table "users", force: true do |t|
+    t.string   "username",        null: false
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
