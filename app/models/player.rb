@@ -18,9 +18,6 @@ class Player < ActiveRecord::Base
     "DEF"
   ]
 
-  def active?(player)
-    player.active == 1
-  end
 
   def self.positions
     players = []
@@ -29,4 +26,9 @@ class Player < ActiveRecord::Base
     end
     players
   end
+
+  def selected?
+    team_player_relationships.exists?
+  end
+
 end

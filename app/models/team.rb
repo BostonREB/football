@@ -17,6 +17,7 @@ class Team < ActiveRecord::Base
   end
 
   def drop(player)
-    team_player_relationships.destroy(player)
+    relationship = TeamPlayerRelationship.where(selected_player_id: player.id)
+    relationship.destroy_all
   end
 end

@@ -11,6 +11,11 @@ gem 'jbuilder', '~> 1.2'
 gem 'fantasy_football_nerd'
 gem 'monban'
 gem 'monban-generators'
+gem 'binding_of_caller'
+
+group :development do
+  gem "better_errors"
+end
 
 
 group :doc do

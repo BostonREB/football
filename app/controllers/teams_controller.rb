@@ -5,7 +5,9 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = current_user.teams.create(team_params)
+    @user = current_user
+    @team = Team.create(team_params)
+    @user.team = @team
     redirect_to dashboard_path
   end
 

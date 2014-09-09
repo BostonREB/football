@@ -17,7 +17,6 @@ Football::Application.routes.draw do
     end
   end
 
-
   resources :quarterbacks, only: [:index]
   resources :runningbacks, only: [:index]
   resources :widereceivers, only: [:index]

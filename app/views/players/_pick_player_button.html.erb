@@ -1,1 +1,5 @@
-<%= button_to "Pick Player", pick_player_path(@player) %>
+<% if player.selected? %>
+  <%= button_to "Drop Player", drop_player_path(player), method: :delete, remote: true %>
+<% else %>
+  <%= button_to "Pick Player", pick_player_path(player), remote: true %>
+<% end %>
