@@ -1,0 +1,54 @@
+.wrapper {
+  @include outer-container;
+}
+
+#logo {
+  color: blue;
+}
+
+.left-split {
+  @include span-columns(6);
+}
+
+.right-split {
+  @include span-columns(6);
+}
+
+body {
+  background-color: #eeeeee;
+}
+
+.left-large {
+  @include span-columns(12);
+  padding-top: 2em;
+  padding-bottom: 2em;
+  @include shift(1);
+}
+
+.center-large {
+  @include span-columns(12);
+  padding-top: 2em;
+  padding-bottom: 2em;
+  @include shift(3);
+}
+
+.right-small {
+  @include span-columns(3);
+}
+
+.notifier {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.right-corner {
+  @include span-columns(3);
+  position: absolute;
+  right: .25em;
+}
+
+.right-corner2 {
+  @include span-columns(3);
+  position: absolute;
+  right: .25em;
+}

@@ -1,6 +1,10 @@
-<h2> National Football League </h2>
+<div class="center-large" >
+  <h3> National Football League </h3>
+</div>
 
   <% @divisions.each do |teams| %>
-    <h3><%= teams.first.division %></h3>
-    <%= render teams %><br>
+    <div class="center-large">
+      <h4><%= teams.first.division %></h4>
+      <%= render teams %><br>
+    </div>
   <% end %>

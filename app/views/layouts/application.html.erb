@@ -19,9 +19,15 @@
   </div>
 
   <div>
-    <h2><%= link_to "Footballing", dashboard_path %></h2>
-    <h3><%= link_to "NFL Teams", pro_teams_path %></h3>
-    <h3><%= link_to "NFL Players", players_path %></h3>
+    <h4><%= link_to "Footballing", dashboard_path %></h4>
+  </div>
+  <div>
+    <div class="left-split">
+      <h3><%= link_to "NFL Teams", pro_teams_path %></h3>
+    </div>
+    <div class="right-split">
+      <h3><%= link_to "NFL Players", players_path %></h3>
+    </div>
   </div>
 
 <%= yield %>

@@ -2,8 +2,6 @@ class Team < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :players
-
   has_many :team_player_relationships,
     foreign_key: :selecting_team_id,
     dependent: :destroy

@@ -13,7 +13,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
-    players = @team.selected_players.all
+    @players = @team.selected_players.all.sort
   end
 
   private

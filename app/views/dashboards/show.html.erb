@@ -1,9 +1,5 @@
-<h2><%= current_user.username %></h2>
-
-<h3><%= current_user.username %>'s fantasy football team</h3>
-
-<div>
-  <%= link_to @team.name, team_path(@team) %>
+<div class="center-large">
+  <h2><%= link_to @team.name, team_path(@team) %></h2>
 </div>
 
 

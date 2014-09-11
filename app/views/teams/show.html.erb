@@ -1,4 +1,16 @@
-<h1><%= @team.name %></h1>
+<div class="center-large">
+  <h1><%= @team.name %></h1>
+</div>
 
-<%= render @team.selected_players %>
+<% @players.each do |player| %>
+  <div>
+    <table>
+      <tr>
+        <td><%= link_to player.fullname, player_path(player) %></td>
+        <td><%= player.position %></td>
+        <td><%= link_to player.pro_team.full_name, pro_team_path(player.pro_team) %></td>
+      </tr>
+    <table>
+  </div>
+<% end %>
 
