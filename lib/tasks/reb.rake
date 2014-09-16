@@ -12,6 +12,12 @@ namespace :get_data do
     pro_teams.get_teams
   end
 
+  desc "Get Weekly Projections"
+  task weekly_projections: :environment do
+    weekly_projections = ProjectionsRetriever.new
+    weekly_projections.get_projections
+  end
+
   desc "Link players with NFL Teams"
   task link_players_to_teams: :environment do
     players = Player.all

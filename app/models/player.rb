@@ -8,6 +8,8 @@ class Player < ActiveRecord::Base
   has_many :selecting_teams,
     through: :team_player_relationships
 
+  has_many :projections
+
 
   POSITIONS = [
     "QB",

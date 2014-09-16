@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140908165442) do
+ActiveRecord::Schema.define(version: 20140912162407) do
 
   create_table "players", force: true do |t|
     t.string   "first_name"
@@ -36,6 +36,37 @@ ActiveRecord::Schema.define(version: 20140908165442) do
     t.string   "conference"
     t.string   "division"
   end
+
+  create_table "projections", force: true do |t|
+    t.integer  "player_id"
+    t.integer  "week"
+    t.integer  "pass_att"
+    t.integer  "pass_comp"
+    t.integer  "pass_yds"
+    t.integer  "pass_td"
+    t.integer  "pass_int"
+    t.integer  "rush_att"
+    t.integer  "rush_yds"
+    t.integer  "rush_td"
+    t.integer  "fumbles_lost"
+    t.integer  "receptions"
+    t.integer  "rec_yds"
+    t.integer  "rec_td"
+    t.integer  "fg"
+    t.integer  "xp"
+    t.integer  "def_int"
+    t.integer  "def_fum_recovery"
+    t.integer  "def_sack"
+    t.integer  "def_td"
+    t.integer  "def_return_td"
+    t.integer  "def_safety"
+    t.integer  "def_points_allowed"
+    t.integer  "def_yds_allowed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projections", ["player_id"], name: "index_projections_on_player_id"
 
   create_table "team_player_relationships", force: true do |t|
     t.integer  "selecting_team_id"

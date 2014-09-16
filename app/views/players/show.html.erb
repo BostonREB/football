@@ -19,3 +19,24 @@
     </div>
   <% end %>
 </div>
+
+<section>
+  <h5>Projected Weekly Statistics</h5>
+    <div id="box-small3">
+      <table>
+        <tr>
+          <th>Week</th>
+          <th>Passing Attempts</th>
+          <th>Passing Completions</th>
+          <th>Passing Yards</th>
+          <th>Passing Touchdowns</th>
+          <th>Rushing Attempts</th>
+          <th>Rushing Yards</th>
+          <th>Rushing Touchdowns</th>
+          <th>Interceptions</th>
+          <th>Fumbles</th>
+        </tr>
+        <%= render @player.projections.by_date %>
+      </table>
+    </div>
+</section><br>

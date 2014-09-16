@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_id: 
+  week: 
+  pass_att: 
+  pass_comp: 
+  pass_yds: 1
+  pass_td: 
+  pass_int: 
+  rush_att: 
+  rush_yds: 
+  rush_td: 
+  fumbles_lost: 
+  receptions: 
+  rec_yds: 
+  rec_td: 
+  fg: 
+  xp: 
+  def_int: 
+  def_fum_recovery: 
+  def_sack: 
+  def_td: 
+  def_return_td: 
+  def_safety: 
+  def_points_allowed: 
+  def_yds_allowed: 
+
+two:
+  player_id: 
+  week: 
+  pass_att: 
+  pass_comp: 
+  pass_yds: 1
+  pass_td: 
+  pass_int: 
+  rush_att: 
+  rush_yds: 
+  rush_td: 
+  fumbles_lost: 
+  receptions: 
+  rec_yds: 
+  rec_td: 
+  fg: 
+  xp: 
+  def_int: 
+  def_fum_recovery: 
+  def_sack: 
+  def_td: 
+  def_return_td: 
+  def_safety: 
+  def_points_allowed: 
+  def_yds_allowed: 

@@ -3,8 +3,6 @@
 </div>
 
   <% @divisions.each do |teams| %>
-    <div class="center-large">
       <h4><%= teams.first.division %></h4>
       <%= render teams %><br>
-    </div>
   <% end %>
