@@ -1,6 +1,7 @@
 class Team < ActiveRecord::Base
 
   belongs_to :user
+  belongs_to :league
 
   has_many :team_player_relationships,
     foreign_key: :selecting_team_id,
@@ -8,7 +9,6 @@ class Team < ActiveRecord::Base
 
   has_many :selected_players,
     through: :team_player_relationships
-
 
   def pick(player)
     team_player_relationships.create(selected_player_id: player.id)

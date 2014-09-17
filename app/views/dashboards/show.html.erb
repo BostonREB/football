@@ -1,7 +1,11 @@
 <div class="center-large">
-  <h2><%= link_to @team.name, team_path(@team) %></h2>
+  <div>
+    <h5><%= current_user.username %>'s Fantasy Leagues
+  </div>
+  <h5><%= render @leagues %></h5>
 </div>
 
+<h5><%= link_to "Create or Join a League", leagues_path %></h5>
 
 
 

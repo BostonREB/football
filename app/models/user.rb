@@ -2,6 +2,18 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
-  has_one :team
+  has_many :teams,
+    through: :league,
+    dependent: :destroy
+
   has_many :selected_players, through: :team
+
+  has_many :league_memberships
+  has_many :leagues,
+    through: :league_memberships,
+    dependent: :destroy
+
+  def join(league)
+    league_memberships.create(league: league)
+  end
 end
