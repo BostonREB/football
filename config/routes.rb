@@ -5,7 +5,13 @@ Football::Application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
 
-  resources :teams, only: [:new, :create, :show]
+  resources :leagues, only: [:index, :new, :create, :show] do
+    member do
+      post "join" => "league_memberships#create"
+      delete "leave" => "league_memberships#destroy"
+    end
+    resources :teams, only: [:new, :create, :show]
+  end
 
   resource :dashboard, only: [:show]
 

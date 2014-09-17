@@ -1,14 +1,18 @@
 class TeamsController < ApplicationController
 
   def new
+    @league = League.find(params[:league_id])
     @team = Team.new
   end
 
   def create
-    @user = current_user
-    @team = Team.create(team_params)
-    @user.team = @team
-    redirect_to dashboard_path
+    @league = current_user.leagues.find(params[:league_id])
+    @team = @league.teams.new(team_params)
+    if @team.save
+      redirect_to @league
+    else
+      redirect_to :new
+    end
   end
 
   def show

@@ -1,0 +1,10 @@
+<h5>Create a New League</h5>
+
+<div>
+  <%= form_for @league do |form| %>
+    <%= form.text_field :name, placeholder: "League Name" %>
+    <%= form.number_field :team_limit, placeholder: "Maximum Number of Teams in League" %>
+    <%= form.submit "Create League" %>
+  <% end %>
+</div>
+
