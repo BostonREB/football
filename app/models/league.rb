@@ -7,4 +7,7 @@ class League < ActiveRecord::Base
   has_many :users,
     through: :league_memberships
 
+def joined?
+    league_memberships.exists?
+  end
 end

@@ -1,9 +1,15 @@
 <h4><%= @league.name %></h4>
 
+<% if signed_in? %>
+  <div id="join_league_button">
+    <%= render "join_league_button", league: @league %>
+  </div>
+<% end %>
+
 <%= render @teams %>
 
 <div>
-  <% if @league.teams.count < 12 %>
+  <% if @league.teams.count < @league.team_limit %>
     <h6><%= link_to "Add a New Team to the League", new_league_team_path(@league) %></h6>
   <% end %>
 </div>

@@ -1,0 +1,5 @@
+<% if league.joined? %>
+  <%= button_to "Leave League", leave_league_path(league), method: :delete, remote: true %>
+<% else %>
+  <%= button_to "Join League", join_league_path(league), remote: true %>
+<% end %>

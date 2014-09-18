@@ -16,4 +16,9 @@ class User < ActiveRecord::Base
   def join(league)
     league_memberships.create(league: league)
   end
+
+  def leave(league)
+    membership = LeagueMembership.where(league_id: league.id)
+    membership.destroy_all
+  end
 end
