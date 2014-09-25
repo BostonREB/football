@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_id: 
+  bye_week: 1
+  nerd_rank: 1
+  position_rank: 1
+
+two:
+  player_id: 
+  bye_week: 1
+  nerd_rank: 1
+  position_rank: 1

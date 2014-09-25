@@ -18,6 +18,12 @@ namespace :get_data do
     weekly_projections.get_projections
   end
 
+  desc "Get Draft Rankings"
+  task draft_rankings: :environment do
+    draft_rankings = RankingsRetriever.new
+    draft_rankings.get_rankings
+  end
+
   desc "Link players with NFL Teams"
   task link_players_to_teams: :environment do
     players = Player.all
