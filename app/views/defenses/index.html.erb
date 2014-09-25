@@ -1,9 +1,9 @@
 <h1>Defenses</h1>
 
 <div>
-  <% @players.each do |player| %>
+  <% @players.each do |team| %>
     <div>
-      <td><%= link_to player.fullname, player_path(player) %><td>
+      <td><%= link_to team.fullname, pro_team_path(team.pro_team_id) %><td>
     </div>
   <% end %>
 </div>

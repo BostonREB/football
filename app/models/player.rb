@@ -10,6 +10,8 @@ class Player < ActiveRecord::Base
 
   has_many :projections
 
+  has_one :ranking
+
 
   POSITIONS = [
     "QB",

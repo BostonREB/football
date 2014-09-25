@@ -7,6 +7,6 @@ class WiderecieversController < ApplicationController
   private
 
   def find_receivers
-    Player.where(position: "WR")
+    Ranking.where("position == 'WR'").map(&:player)
   end
 end

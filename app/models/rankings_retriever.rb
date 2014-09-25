@@ -14,6 +14,7 @@ class RankingsRetriever
   def ranking_params(ranking)
     {
       player_id: ranking.playerId.to_i,
+      position: ranking.position,
       bye_week: ranking.bye_week,
       nerd_rank: ranking.nerd_rank,
       position_rank: ranking.position_rank,

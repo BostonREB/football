@@ -7,6 +7,6 @@ class TightendsController < ApplicationController
   private
 
   def find_tightends
-    Player.where(position: "TE")
+    Ranking.where("position == 'TE'").map(&:player)
   end
 end

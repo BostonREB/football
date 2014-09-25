@@ -7,6 +7,6 @@ class DefensesController < ApplicationController
   private
 
   def find_defenses
-    Player.where(position: "DEF")
+    Ranking.where("position == 'DEF'").map(&:player)
   end
 end

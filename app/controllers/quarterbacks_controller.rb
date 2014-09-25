@@ -7,6 +7,6 @@ class QuarterbacksController < ApplicationController
   private
 
   def find_quarterbacks
-    Player.where(position: "QB")
+    Ranking.where("position == 'QB'").map(&:player)
   end
 end
