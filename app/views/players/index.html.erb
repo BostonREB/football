@@ -10,10 +10,9 @@
       <th>NFL Team</th>
       <th></th>
     </tr>
-    <% @players.each do |player| %>
-      <% if player.position == "QB" %>
-        <%= render player %>
-      <% end %>
+    <% qbs = @rankings.where("position == 'QB'").map(&:player) %>
+    <% qbs.each do |player| %>
+      <%= render player %>
     <% end %>
   </table>
 </div>
@@ -26,10 +25,9 @@
       <th>Position</th>
       <th>NFL Team</th>
     </tr>
-    <% @players.each do |player| %>
-      <% if player.position == "RB" %>
-        <%= render player %>
-      <% end %>
+    <% rbs = @rankings.where("position == 'RB'").map(&:player) %>
+    <% rbs.each do |player| %>
+      <%= render player %>
     <% end %>
   </table>
 </div>
@@ -42,10 +40,9 @@
       <th>Position</th>
       <th>NFL Team</th>
     </tr>
-    <% @players.each do |player| %>
-      <% if player.position == "WR" %>
-        <%= render player %>
-      <% end %>
+    <% wrs = @rankings.where("position == 'WR'").map(&:player) %>
+    <% wrs.each do |player| %>
+      <%= render player %>
     <% end %>
   </table>
 </div>
@@ -58,10 +55,9 @@
       <th>Position</th>
       <th>NFL Team</th>
     </tr>
-    <% @players.each do |player| %>
-      <% if player.position == "TE" %>
-        <%= render player %>
-      <% end %>
+    <% tes = @rankings.where("position == 'TE'").map(&:player) %>
+    <% tes.each do |player| %>
+      <%= render player %>
     <% end %>
   </table>
 </div>
@@ -74,10 +70,9 @@
       <th>Position</th>
       <th>NFL Team</th>
     </tr>
-    <% @players.each do |player| %>
-      <% if player.position == "K" %>
-        <%= render player %>
-      <% end %>
+    <% ks = @rankings.where("position == 'K'").map(&:player) %>
+    <% ks.each do |player| %>
+      <%= render player %>
     <% end %>
   </table>
 </div>
@@ -88,9 +83,10 @@
     <tr>
       <th>NFL Team</th>
     </tr>
-    <% @pro_teams.each do |team| %>
+     <% defs = @rankings.where("position == 'DEF'").map(&:player) %>
+    <% defs.each do |team| %>
       <tr>
-        <td><%= link_to team.full_name, pro_team_path(team) %></td>
+        <td><%= link_to team.fullname, pro_team_path(team.pro_team_id) %></td>
       </tr>
     <% end %>
   </table>

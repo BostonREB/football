@@ -7,6 +7,6 @@ class RunningbacksController < ApplicationController
   private
 
   def find_running_backs
-    Player.where(position: "RB")
+    Ranking.where("position == 'RB'").map(&:player)
   end
 end

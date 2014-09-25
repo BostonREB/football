@@ -10,12 +10,15 @@ Football::Application.routes.draw do
       post "join" => "league_memberships#create"
       delete "leave" => "league_memberships#destroy"
     end
-    resources :teams, only: [:new, :create, :show]
+    resources :teams, only: [:new, :create]
   end
 
   resource :dashboard, only: [:show]
 
   resources :pro_teams, only: [:index, :show]
+
+  resources :teams, only: [:show]
+
   resources :players, only: [:index, :show] do
     member do
       post "pick" => "team_player_relationships#create"

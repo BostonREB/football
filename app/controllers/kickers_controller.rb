@@ -7,6 +7,6 @@ class KickersController < ApplicationController
   private
 
   def find_kickers
-    Player.where(position: "K")
+    Ranking.where("position == 'K'").map(&:player)
   end
 end

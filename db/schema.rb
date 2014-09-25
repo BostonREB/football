@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918153415) do
+ActiveRecord::Schema.define(version: 20140925152943) do
 
   create_table "league_memberships", force: true do |t|
     t.integer  "user_id"
@@ -87,6 +87,19 @@ ActiveRecord::Schema.define(version: 20140918153415) do
   end
 
   add_index "projections", ["player_id"], name: "index_projections_on_player_id"
+
+  create_table "rankings", force: true do |t|
+    t.integer  "player_id"
+    t.integer  "bye_week"
+    t.integer  "nerd_rank"
+    t.integer  "position_rank"
+    t.integer  "overall_rank"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "position"
+  end
+
+  add_index "rankings", ["player_id"], name: "index_rankings_on_player_id"
 
   create_table "team_player_relationships", force: true do |t|
     t.integer  "selecting_team_id"

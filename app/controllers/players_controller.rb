@@ -2,6 +2,7 @@ class PlayersController < ApplicationController
 
   def index
     @players = Player.all
+    @rankings = Ranking.all
     @pro_teams = ProTeam.all
   end
 
