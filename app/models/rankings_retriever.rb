@@ -3,7 +3,7 @@ class RankingsRetriever
   FFNERD_API_KEY = ENV.fetch('FFNERD_API_KEY')
 
   def get_rankings
-    rankings = FFNerd.ppr_draft_rankings[3]
+    rankings = FFNerd.ppr_draft_rankings
     rankings.map do |ranking|
       Ranking.create(ranking_params(ranking))
     end
