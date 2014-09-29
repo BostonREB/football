@@ -1,4 +1,4 @@
-<% if player.selected? %>
+<% if player.selected? && @team.member?(player) %>
   <%= button_to "Drop Player", drop_team_path(@team, player), method: :delete %>
 <% else %>
   <%= button_to "Pick Player", pick_team_path(@team, player) %>
