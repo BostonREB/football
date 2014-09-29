@@ -2,9 +2,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
-  has_many :teams,
-    through: :league,
-    dependent: :destroy
+  has_many :teams
 
   has_many :selected_players, through: :team
 

@@ -12,14 +12,6 @@
   <%= @player.position %>
 </div>
 
-<div>
-  <% if signed_in? %>
-    <div id="pick_player_button">
-      <%= render "pick_player_button", player: @player %>
-    </div>
-  <% end %>
-</div>
-
 <section>
   <h5>Projected Weekly Statistics</h5>
     <div id="box-small3">
