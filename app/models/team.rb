@@ -18,4 +18,8 @@ class Team < ActiveRecord::Base
     relationship = TeamPlayerRelationship.where(selected_player_id: player.id)
     relationship.destroy_all
   end
+
+  def member?(player)
+    selected_player_ids.include? player.id
+  end
 end

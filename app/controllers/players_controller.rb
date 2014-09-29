@@ -4,6 +4,7 @@ class PlayersController < ApplicationController
     @players = Player.all
     @rankings = Ranking.all
     @pro_teams = ProTeam.all
+    @team = Team.find(params[:team_id] ||= current_user.teams.first)
   end
 
   def show

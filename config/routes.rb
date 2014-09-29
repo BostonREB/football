@@ -17,14 +17,16 @@ Football::Application.routes.draw do
 
   resources :pro_teams, only: [:index, :show]
 
-  resources :teams, only: [:show]
-
-  resources :players, only: [:index, :show] do
+  resources :teams, only: [:show] do
     member do
-      post "pick" => "team_player_relationships#create"
-      delete "drop" => "team_player_relationships#destroy"
+      post "pick/:player_id" => "team_player_relationships#create", as: "pick"
+      delete "drop/:player_id" => "team_player_relationships#destroy", as: "drop"
     end
+    resources :players, only: [:index]
   end
+
+
+  resources :players, only: [:index, :show]
 
   resources :quarterbacks, only: [:index]
   resources :runningbacks, only: [:index]
